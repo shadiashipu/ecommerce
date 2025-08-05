@@ -6,10 +6,8 @@
 
 using namespace std;
 
-// ----------------- ENUM -----------------
 enum OrderStatus { PENDING, DELIVERED };
 
-// ----------------- PRODUCT CLASS -----------------
 class Product {
     int id;
     string name;
@@ -51,7 +49,6 @@ public:
     }
 };
 
-// ----------------- ORDER CLASS -----------------
 class Order {
     static int orderCounter;
     int id;
@@ -115,7 +112,6 @@ public:
 };
 int Order::orderCounter = 0;
 
-// ----------------- USER CLASSES -----------------
 class User {
 protected:
     string username;
@@ -154,7 +150,6 @@ public:
     }
 };
 
-// ----------------- FILE FUNCTIONS -----------------
 vector<Product> loadProducts(string filename) {
     vector<Product> products;
     ifstream file(filename);
@@ -225,7 +220,6 @@ void registerUser(string user, string pass) {
     file << user << " " << pass << endl;
 }
 
-// ----------------- MAIN FUNCTION -----------------
 int main() {
     vector<Product> products = loadProducts("products.txt");
     vector<Order> orders = loadOrders("orders.txt");
@@ -422,7 +416,6 @@ int main() {
                 cout << "Invalid login!\n";
             }
         }
-
     } while (mainChoice != 0);
 
     return 0;
